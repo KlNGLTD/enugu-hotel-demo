@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>KING’S SAMPLE HOTEL — Where Luxury Meets Tomorrow</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#F6F3EE;--bg2:#ECE6DC;--ink:#14120F;--mut:#5d584f;--navy:#0B1226;--gold:#B8975A;--line:rgba(20,18,15,.18);--serif:"Cormorant Garamond",Georgia,serif;--sans:Jost,"Helvetica Neue",Arial,sans-serif;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0E1220;--bg2:#151a2b;--ink:#F1ECE2;--mut:#aaa59a;--gold:#D2B57C;--line:rgba(241,236,226,.2)}}
+:root[data-theme="dark"]{--bg:#0E1220;--bg2:#151a2b;--ink:#F1ECE2;--mut:#aaa59a;--gold:#D2B57C;--line:rgba(241,236,226,.2)}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:env(safe-area-inset-top,0px)}
+html{overflow-x:hidden;max-width:100%}body{overflow-x:clip;max-width:100%;margin:0;background:var(--bg);color:var(--ink);font:300 17px/1.7 var(--sans);letter-spacing:.01em}
+h1,h2,h3{font-family:var(--serif);font-weight:300;line-height:1.05;margin:0}
+h2{font-size:clamp(2.2rem,5vw,4.2rem);letter-spacing:-.01em}
+h3{font-size:1.9rem;font-weight:400}
+p{margin:0 0 1em;max-width:58ch}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.wrap{max-width:1280px;margin:0 auto;padding:0 clamp(20px,5vw,64px)}
+section{padding:clamp(72px,11vw,160px) 0}
+.sm{font-size:.78rem;letter-spacing:.22em;text-transform:uppercase}
+.btn{display:inline-block;padding:15px 30px;border:1px solid currentColor;background:none;color:inherit;font:400 .75rem var(--sans);letter-spacing:.22em;text-transform:uppercase;text-decoration:none;cursor:pointer;position:relative;overflow:hidden;transition:color .4s,border-color .4s}
+.btn::before{content:"";position:absolute;inset:0;background:var(--gold);transform:translateY(101%);transition:transform .45s cubic-bezier(.2,.7,.2,1);z-index:-1}
+.btn:hover,.btn:focus-visible{color:#14120F;border-color:var(--gold)}.btn:hover::before,.btn:focus-visible::before{transform:none}
+.btn.fill{background:var(--gold);color:#14120F;border-color:var(--gold)}.btn.fill::before{background:#fff}
+.row{display:flex;gap:16px;flex-wrap:wrap}
+/* nav */
+header{position:fixed;top:0;left:0;right:0;z-index:50;padding-top:env(safe-area-inset-top,0px);color:#F4EFE6;transition:background .5s,color .5s,border-color .5s;border-bottom:1px solid transparent}
+header.solid{background:var(--bg);color:var(--ink);border-color:var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:76px}
+.logo{font:400 1.05rem var(--serif);letter-spacing:.32em;text-decoration:none;white-space:nowrap;min-width:0}@media(max-width:560px){.logo{font-size:.8rem;letter-spacing:.14em}.nav{height:64px}}
+.links{display:flex;gap:30px;list-style:none;margin:0;padding:0}
+.links a{font-size:.72rem;letter-spacing:.2em;text-decoration:none;text-transform:uppercase;opacity:.85}.links a:hover{opacity:1;color:var(--gold)}
+.burger{display:none;background:none;border:0;color:inherit;font:400 .72rem var(--sans);letter-spacing:.2em;padding:12px 0;cursor:pointer}
+.nav .btn{padding:11px 20px}
+@media(max-width:980px){.links,.nav .btn{display:none}.burger{display:block}}
+#menu{position:fixed;inset:0;z-index:60;background:var(--navy);color:#F4EFE6;display:flex;flex-direction:column;justify-content:center;padding:40px;clip-path:circle(0 at 100% 0);transition:clip-path .7s cubic-bezier(.7,0,.2,1);visibility:hidden}
+#menu.open{clip-path:circle(150% at 100% 0);visibility:visible}
+#menu a{font:300 clamp(2rem,9vw,3.4rem)/1.35 var(--serif);text-decoration:none;display:block}
+#menu button{position:absolute;top:calc(22px + env(safe-area-inset-top,0px));right:24px;background:none;border:0;color:inherit;font:400 .72rem var(--sans);letter-spacing:.2em;padding:12px}
+/* hero */
+#hero{position:relative;height:100svh;min-height:620px;padding:0;background:radial-gradient(120% 80% at 50% 100%,#2a3358,#0B1226 60%);color:#F4EFE6;overflow:hidden}
+#c{position:absolute;inset:0;width:100%;height:100%;display:block;cursor:grab;touch-action:pan-y;-webkit-tap-highlight-color:transparent;outline:none}
+#c:active{cursor:grabbing}
+.hero-in{position:absolute;left:0;right:0;bottom:0;padding:140px 0 clamp(56px,8vh,90px);pointer-events:none;background:linear-gradient(transparent,rgba(8,12,28,.55) 45%,rgba(8,12,28,.9))}
+.hero-in *{pointer-events:auto}
+.hero-in h1{font-size:clamp(1.9rem,4.6vw,4.2rem);letter-spacing:.06em;font-weight:300}
+.tag{font:italic 300 clamp(1.3rem,2.6vw,2rem) var(--serif);color:#D8BE8A;margin:.6em 0 .5em}
+.hero-in p{max-width:44ch;opacity:.85;font-size:.95rem}.tag{font-size:clamp(1.1rem,2vw,1.5rem)!important}@media(max-width:720px){.hero-in p{display:none}.hero-in{padding-top:90px}.hero-in .btn{padding:13px 18px}}
+.views{position:absolute;right:clamp(14px,3vw,40px);top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:6px;z-index:3}
+.views button{background:rgba(11,18,38,.35);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid rgba(244,239,230,.25);color:#F4EFE6;font:400 .68rem var(--sans);letter-spacing:.16em;text-transform:uppercase;padding:11px 14px;text-align:right;cursor:pointer;min-height:44px}
+.views button[aria-pressed=true]{border-color:#D8BE8A;color:#D8BE8A}
+@media(max-width:720px){.views{top:92px;transform:none;right:0;left:0;flex-direction:row;overflow-x:auto;padding:0 14px}.views button{white-space:nowrap}}
+.scroll{position:absolute;bottom:22px;left:50%;width:1px;height:46px;background:linear-gradient(#D8BE8A,transparent);animation:sc 2.4s infinite}
+@keyframes sc{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+/* image plates (art-directed stand-ins for photography) */
+.pl{position:relative;overflow:hidden;background:var(--bg2);min-height:260px}
+.pl i{position:absolute;inset:-6%;background:var(--g);transition:transform 1.4s cubic-bezier(.2,.7,.2,1);will-change:transform}
+.pl::after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(90deg,rgba(255,255,255,.05) 0 1px,transparent 1px 64px),linear-gradient(transparent 55%,rgba(0,0,0,.28))}
+.pl:hover i{transform:scale(1.07)}
+.pl figcaption{position:absolute;left:16px;bottom:12px;z-index:2;color:#F4EFE6;font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;opacity:.9}
+figure{margin:0}.pl i svg{position:absolute;inset:0;width:100%;height:100%;display:block}
+/* sections */
+.intro{display:grid;grid-template-columns:1fr 1.1fr;gap:clamp(30px,7vw,110px);align-items:center}
+.intro .pl{aspect-ratio:4/5}
+.demo{font-size:.78rem;color:var(--mut);border-top:1px solid var(--line);padding-top:14px;margin-top:30px}
+@media(max-width:860px){.intro{grid-template-columns:1fr}}
+.room{display:grid;grid-template-columns:1.25fr 1fr;gap:clamp(24px,5vw,80px);align-items:center;margin-top:clamp(50px,8vw,110px)}
+.room:nth-child(even){grid-template-columns:1fr 1.25fr}.room:nth-child(even) .pl{order:2}
+.room .pl{aspect-ratio:3/2}
+.meta{display:flex;gap:26px;flex-wrap:wrap;margin:18px 0;font-size:.8rem;color:var(--mut)}
+.det{display:grid;grid-template-rows:0fr;transition:grid-template-rows .6s}.det.open{grid-template-rows:1fr}
+.det>div{overflow:hidden}.det ul{margin:0 0 20px;padding:14px 0 0 18px;border-top:1px solid var(--line);color:var(--mut)}
+@media(max-width:860px){.room,.room:nth-child(even){grid-template-columns:1fr}.room:nth-child(even) .pl{order:0}}
+.xp{display:grid;grid-template-columns:repeat(6,1fr);gap:14px;margin-top:50px}
+.xp .pl{grid-column:span 2;min-height:360px}.xp .pl:nth-child(1),.xp .pl:nth-child(4){grid-column:span 3}
+.xp .cap{position:absolute;z-index:3;left:0;right:0;bottom:0;padding:70px 18px 18px;color:#F4EFE6;background:linear-gradient(transparent,rgba(6,10,22,.88))}.xp .cap h3{margin-bottom:4px}.xp .pl p{margin:0;font-size:.9rem;max-height:0;opacity:0;overflow:hidden;transition:.5s}
+.xp .pl:hover p,.xp .pl:focus-within p{opacity:1;max-height:120px}
+
+@media(hover:none){.xp .pl p{opacity:1;max-height:120px}}
+@media(max-width:860px){.xp{grid-template-columns:1fr}.xp .pl,.xp .pl:nth-child(n){grid-column:auto;min-height:300px}}
+.dark{background:var(--navy);color:#F4EFE6}
+.dark .mut{color:#b9b4a8}
+.dine{display:grid;grid-template-columns:repeat(12,1fr);gap:14px;margin-top:50px}
+.dine .pl:nth-child(1){grid-column:1/8;min-height:480px}.dine .pl:nth-child(2){grid-column:8/13}.dine .pl:nth-child(3){grid-column:1/6}.dine .pl:nth-child(4){grid-column:6/13;min-height:300px}
+.dine ul{list-style:none;padding:0;margin:30px 0;columns:2;max-width:560px;border-top:1px solid rgba(244,239,230,.2)}.dine+ul{}
+@media(max-width:860px){.dine .pl:nth-child(n){grid-column:1/-1;min-height:280px}}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin:36px 0 20px}
+.tabs button{background:none;border:0;border-bottom:1px solid var(--line);color:inherit;font:400 .72rem var(--sans);letter-spacing:.18em;text-transform:uppercase;padding:12px 14px;cursor:pointer;min-height:44px}
+.tabs button[aria-selected=true]{border-color:var(--gold);color:var(--gold)}
+#arch .pl{aspect-ratio:16/8;min-height:300px}
+.team{display:grid;grid-template-columns:repeat(5,1fr);gap:18px;margin-top:50px}
+.team article{border-top:1px solid var(--line);padding-top:14px}
+.team .pl{aspect-ratio:3/4;min-height:0;margin-bottom:14px;border-radius:50% 50% 0 0/38% 38% 0 0}
+.team h3{font-size:1.4rem}.team p{font-size:.84rem;color:var(--mut);max-height:0;opacity:0;overflow:hidden;transition:.5s;margin:0}
+.team article:hover p,.team article:focus-within p,.team article.on p{max-height:200px;opacity:1}
+.team button{background:none;border:0;color:var(--gold);font:400 .7rem var(--sans);letter-spacing:.18em;text-transform:uppercase;padding:8px 0;cursor:pointer}
+@media(max-width:980px){.team{grid-template-columns:repeat(2,1fr)}}
+.offers{margin-top:50px;border-top:1px solid var(--line)}
+.offer{display:grid;grid-template-columns:150px 1fr auto;gap:28px;align-items:center;padding:22px 0;border-bottom:1px solid var(--line)}
+.offer .pl{min-height:0;height:100px}.offer p{margin:0;color:var(--mut)}.offer h3{margin-bottom:4px}
+@media(max-width:700px){.offer{grid-template-columns:90px 1fr}.offer .btn{grid-column:1/-1;justify-self:start}}
+#book{background:var(--bg2)}
+form.res{display:grid;grid-template-columns:repeat(5,1fr) auto;gap:0;margin-top:44px;border:1px solid var(--line);background:var(--bg)}
+.f{min-width:0;padding:14px 18px;border-right:1px solid var(--line);display:flex;flex-direction:column}
+.f label{font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;color:var(--mut)}
+.f input,.f select{background:none;border:0;color:var(--ink);font:400 1rem var(--sans);padding:6px 0;min-height:36px;color-scheme:light dark;width:100%}
+.f input:focus,.f select:focus{outline:none}.f:focus-within{box-shadow:inset 0 -2px var(--gold)}
+.f small{color:#b3402f;font-size:.74rem;min-height:1.1em}
+@media (prefers-color-scheme:dark){.f small{color:#ff9d8a}}
+.res .btn{border:0;background:var(--navy);color:#F4EFE6;padding:0 34px}
+@media(max-width:980px){form.res{grid-template-columns:1fr 1fr}.f{border-bottom:1px solid var(--line)}.res .btn{grid-column:1/-1;min-height:58px}}
+#out{margin-top:30px}
+.ok{border-left:2px solid var(--gold);padding:6px 0 6px 22px}
+.enq{display:grid;gap:10px;max-width:520px;margin-top:20px}
+.enq input,.enq textarea{background:var(--bg);color:var(--ink);border:1px solid var(--line);padding:12px;font:300 1rem var(--sans)}
+.quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(24px,4vw,60px);margin-top:50px}
+blockquote{margin:0;font:italic 300 1.55rem/1.35 var(--serif)}
+blockquote footer{font:400 .74rem var(--sans);font-style:normal;letter-spacing:.14em;text-transform:uppercase;color:var(--mut);margin-top:16px}
+@media(max-width:860px){.quotes{grid-template-columns:1fr}}
+.gal{columns:3 260px;column-gap:14px;margin-top:46px}
+.gal button{display:block;width:100%;margin:0 0 14px;padding:0;border:0;cursor:zoom-in;background:none;break-inside:avoid}
+.gal .pl{min-height:0}
+#lb{border:0;padding:0;background:rgba(5,8,18,.96);color:#F4EFE6;width:100%;max-width:none;height:100%;max-height:none}
+#lb::backdrop{background:#050812}
+#lb .st{position:absolute;inset:60px 60px 80px}#lb .pl{position:absolute;inset:0;min-height:0}
+#lb button{position:absolute;background:none;border:0;color:#F4EFE6;font:400 .74rem var(--sans);letter-spacing:.2em;padding:16px;cursor:pointer;min-height:48px;text-transform:uppercase}
+.final{position:relative;text-align:center;color:#F4EFE6;padding:clamp(120px,20vw,260px) 0;overflow:hidden}
+.final .pl{position:absolute;inset:0;min-height:0}.final .pl::after{background:rgba(5,8,18,.45)}
+.final .wrap{position:relative;z-index:2}.final p{margin:20px auto 34px}.final .row{justify-content:center}
+footer.ft{background:var(--navy);color:#cfcabd;padding:80px 0 40px;font-size:.88rem}
+.ft .g{display:grid;grid-template-columns:1.4fr 1fr 1fr 1.2fr;gap:40px}
+.ft h4{font:400 .7rem var(--sans);letter-spacing:.22em;text-transform:uppercase;color:#D8BE8A;margin:0 0 14px}
+.ft ul{list-style:none;margin:0;padding:0}.ft li{margin-bottom:6px}.ft a{text-decoration:none}.ft a:hover{color:#D8BE8A}
+.ft input{background:none;border:0;border-bottom:1px solid #8a8678;color:#fff;padding:10px 0;font:inherit;width:100%}
+.ft .note{border-top:1px solid rgba(255,255,255,.15);margin-top:50px;padding-top:20px;font-size:.78rem}
+@media(max-width:860px){.ft .g{grid-template-columns:1fr 1fr}}
+.rv{opacity:0;transform:translateY(24px);transition:opacity 1s,transform 1s}.rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}.rv{opacity:1;transform:none}}
+.sr{position:absolute;left:-9999px}
+</style>
+</head>
+<body>
+<a class="sr" href="#main">Skip to content</a><svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><linearGradient id="sk" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#141c3c"/><stop offset=".65" stop-color="#3a4577"/><stop offset="1" stop-color="#e2a770"/></linearGradient><linearGradient id="nt" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#060a18"/><stop offset="1" stop-color="#1f2a52"/></linearGradient><linearGradient id="wt" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5cc3d4"/><stop offset="1" stop-color="#1b6a86"/></linearGradient><radialGradient id="gw"><stop offset="0" stop-color="#ffd9a0" stop-opacity=".85"/><stop offset="1" stop-color="#ffd9a0" stop-opacity="0"/></radialGradient></defs></svg>
+<header id="hd"><div class="wrap nav">
+<a class="logo" href="#hero">KING’S SAMPLE HOTEL</a>
+<ul class="links"><li><a href="#hero">Home</a></li><li><a href="#rooms">Rooms &amp; Suites</a></li><li><a href="#experiences">Experiences</a></li><li><a href="#dining">Dining</a></li><li><a href="#facilities">Facilities</a></li><li><a href="#gallery">Gallery</a></li></ul>
+<a class="btn" href="#book">Reserve now</a>
+<button class="burger" id="bg" aria-expanded="false" aria-controls="menu">MENU</button>
+</div></header>
+<nav id="menu" aria-label="Full-screen menu"><button id="mx">CLOSE</button>
+<a href="#hero">Home</a><a href="#rooms">Rooms &amp; Suites</a><a href="#experiences">Experiences</a><a href="#dining">Dining</a><a href="#facilities">Facilities</a><a href="#gallery">Gallery</a><a href="#book">Reserve now</a></nav>
+
+<main id="main">
+<section id="hero" aria-label="Interactive 3D hotel">
+<canvas id="c" role="img" aria-label="Interactive 3D model of a curved glass hotel tower with pool terraces. Drag to rotate."></canvas>
+<div class="views" role="group" aria-label="Choose a view" id="vw"></div>
+<div class="hero-in"><div class="wrap">
+<h1>KING’S SAMPLE HOTEL</h1>
+<div class="tag">Where Luxury Meets Tomorrow.</div>
+<p>An extraordinary hospitality experience designed around elegance, comfort and exceptional service.</p>
+<div class="row"><a class="btn" href="#welcome">Explore the hotel</a><a class="btn fill" href="#book">Reserve your stay</a></div>
+</div></div>
+<div class="scroll" aria-hidden="true"></div>
+</section>
+
+<section id="welcome"><div class="wrap intro">
+<div class="rv"><h2>A Different Perspective on Luxury.</h2><br>
+<p>Discover a refined hospitality experience where extraordinary architecture, thoughtful details and exceptional service come together to create unforgettable stays.</p>
+<p class="demo">This website is a design concept. KING’S SAMPLE HOTEL is fictional, and all imagery shown here is an art-directed placeholder for photography.</p></div>
+<figure class="pl rv" data-p="dusk" data-t="Grand exterior"></figure>
+</div></section>
+
+<section id="rooms" style="background:var(--bg2)"><div class="wrap">
+<h2 class="rv">Spaces Designed to Inspire.</h2>
+<div id="rl"></div>
+</div></section>
+
+<section id="experiences"><div class="wrap">
+<h2 class="rv">More Than a Stay. An Experience.</h2>
+<div class="xp" id="xp"></div>
+</div></section>
+
+<section id="dining" class="dark"><div class="wrap">
+<h2 class="rv">An Artful Approach to Dining.</h2>
+<p class="mut" style="margin-top:24px">Fine dining, international cuisine, unhurried breakfasts, private tables and a lounge bar, all in one room of warm stone and glass. Sample content only: no restaurant names, awards or chef credentials are implied.</p>
+<div class="dine">
+<figure class="pl" data-p="warm" data-t="Fine dining room"></figure><figure class="pl" data-p="gold" data-t="Breakfast"></figure><figure class="pl" data-p="navy" data-t="Private dining"></figure><figure class="pl" data-p="dusk" data-t="Bar and lounge"></figure></div>
+<p style="margin-top:36px"><a class="btn" href="#book">Discover dining</a></p>
+</div></section>
+
+<section id="facilities"><div class="wrap">
+<h2 class="rv">Beauty in Every Detail.</h2>
+<div class="tabs" role="tablist" id="tb"></div>
+<figure class="pl" id="ar" role="tabpanel"></figure>
+<p id="ad" style="margin-top:20px"></p>
+</div></section>
+
+<section style="background:var(--bg2)"><div class="wrap">
+<h2 class="rv">Hospitality, Delivered Personally.</h2>
+<p class="demo" style="border:0">Fictional demonstration profiles. Portraits are placeholders.</p>
+<div class="team" id="tm"></div>
+</div></section>
+
+<section><div class="wrap">
+<h2 class="rv">Make Your Next Stay Extraordinary.</h2>
+<div class="offers" id="of"></div>
+<p class="demo" style="border:0">Sample offers. No real prices or discounts are implied.</p>
+</div></section>
+
+<section id="book"><div class="wrap">
+<h2 class="rv">Your Stay Begins Here.</h2>
+<form class="res" id="rf" novalidate>
+<div class="f"><label for="ci">Check-in date</label><input type="date" id="ci" required><small id="e1" role="alert"></small></div>
+<div class="f"><label for="co">Check-out date</label><input type="date" id="co" required><small id="e2" role="alert"></small></div>
+<div class="f"><label for="ad2">Adults</label><select id="ad2"><option>1</option><option selected>2</option><option>3</option><option>4</option></select></div>
+<div class="f"><label for="ch">Children</label><select id="ch"><option>0</option><option>1</option><option>2</option><option>3</option></select></div>
+<div class="f"><label for="rt">Room type</label><select id="rt"></select></div>
+<button class="btn" type="submit">Check availability</button>
+</form>
+<div id="out" aria-live="polite"></div>
+</div></section>
+
+<section><div class="wrap">
+<h2 class="rv">Experiences That Stay With You.</h2>
+<p class="demo" style="border:0">Fictional sample testimonials written for this design demonstration. They are not real guest reviews.</p>
+<div class="quotes">
+<blockquote>“Every corridor felt composed, like walking through a gallery that happened to have beds.”<footer>Sample guest, fictional</footer></blockquote>
+<blockquote>“Dinner, the pool and the skyline blurred into one very long, very calm evening.”<footer>Sample guest, fictional</footer></blockquote>
+<blockquote>“Service that anticipates, never intrudes. I would not change a single detail.”<footer>Sample guest, fictional</footer></blockquote>
+</div></div></section>
+
+<section id="gallery" style="background:var(--bg2)"><div class="wrap">
+<h2 class="rv">A World Worth Experiencing.</h2>
+<div class="gal" id="gl"></div>
+</div></section>
+
+<section class="final"><figure class="pl" data-p="night" data-t=""></figure>
+<div class="wrap"><h2>Your Extraordinary Stay Awaits.</h2>
+<p>Discover a new expression of hospitality, where every detail is designed around you.</p>
+<div class="row"><a class="btn" href="#hero">Explore the hotel</a><a class="btn fill" href="#book">Reserve your stay</a></div></div></section>
+</main>
+
+<footer class="ft"><div class="wrap">
+<div class="g">
+<div><div class="logo" style="color:#F4EFE6">KING’S SAMPLE HOTEL</div><p style="margin-top:14px">Where Luxury Meets Tomorrow.</p></div>
+<div><h4>Explore</h4><ul><li><a href="#hero">Home</a></li><li><a href="#rooms">Rooms &amp; Suites</a></li><li><a href="#experiences">Experiences</a></li><li><a href="#dining">Dining</a></li><li><a href="#gallery">Gallery</a></li><li><a href="#contact">Contact</a></li></ul></div>
+<div id="contact"><h4>Contact (sample)</h4><ul><li>1 Sample Avenue, Example City</li><li>+00 000 000 0000</li><li>hello@kingssample.example</li><li><a href="#">Instagram</a> · <a href="#">LinkedIn</a> · <a href="#">X</a></li></ul></div>
+<div><h4>Newsletter</h4><form id="nf"><label class="sr" for="nm">Email</label><input id="nm" type="email" placeholder="Email address" required><p id="nmsg" style="margin-top:10px;font-size:.8rem">Demo only. Nothing is stored or sent.</p></form></div>
+</div>
+<div class="note"><a href="#">Privacy policy</a> &nbsp; <a href="#">Terms and conditions</a><br><br>KING’S SAMPLE HOTEL is a sample design concept, not an operating hotel.</div>
+</div></footer>
+
+<dialog id="lb" aria-label="Image viewer"><div class="st"><figure class="pl" id="lp"></figure></div>
+<button id="lx" style="top:0;right:0">Close</button><button id="lv" style="left:0;bottom:0">Previous</button><button id="ln" style="right:0;bottom:0">Next</button></dialog>
+
+<script>
+const $=(s,r=document)=>r.querySelector(s),$$=(s,r=document)=>[...r.querySelectorAll(s)];
+/* art-directed plates: gradients stand in for photography */
+const P={dusk:"radial-gradient(60% 50% at 70% 30%,#e8cf9f,transparent 70%),linear-gradient(170deg,#2b3560,#0B1226 80%)",
+warm:"radial-gradient(50% 60% at 30% 40%,#e9d3a8,transparent 70%),linear-gradient(160deg,#6b5640,#241b15)",
+gold:"radial-gradient(60% 50% at 60% 30%,#f3e4bf,transparent 70%),linear-gradient(160deg,#b8975a,#6c5530)",
+navy:"radial-gradient(50% 60% at 70% 60%,#4a5f9a,transparent 70%),linear-gradient(160deg,#16203f,#080d1c)",
+pearl:"radial-gradient(60% 60% at 40% 30%,#fff,transparent 70%),linear-gradient(160deg,#d9d2c4,#9b937f)",
+pool:"radial-gradient(60% 50% at 50% 60%,#7fc4cf,transparent 70%),linear-gradient(170deg,#274e6b,#0d2238)",
+stone:"radial-gradient(50% 50% at 30% 30%,#efe9dc,transparent 70%),linear-gradient(160deg,#a69e8d,#57513f)",
+night:"radial-gradient(40% 40% at 50% 70%,#e7c283,transparent 70%),linear-gradient(180deg,#070b19,#1b2448)"};
+const RC=(x,y,w,h,f,o='')=>`<rect x="${x}" y="${y}" width="${w}" height="${h}" fill="${f}" ${o}/>`,
+C=(x,y,r,f)=>`<circle cx="${x}" cy="${y}" r="${r}" fill="${f}"/>`,
+E=(x,y,a,b,f)=>`<ellipse cx="${x}" cy="${y}" rx="${a}" ry="${b}" fill="${f}"/>`,
+GL=(x,y,r)=>C(x,y,r,'url(#gw)'),
+Pa=(d,f,s='')=>`<path d="${d}" fill="${f}" ${s}/>`,
+grid=(x,y,c,r,w,h,g,on='#f3c985',off='#22345c')=>{let s='';for(let i=0;i<c;i++)for(let j=0;j<r;j++)s+=RC(x+i*(w+g),y+j*(h+g),w,h,(i*7+j*3)%5<2?on:off);return s},
+stars=(()=>{let s='';for(let i=0;i<30;i++)s+=C((i*97)%400,(i*53)%120,.9,'#fff');return s})(),
+palm=(x,y)=>`<path d="M${x} ${y}V${y-36}M${x} ${y-36}q-20-2-28 10M${x} ${y-36}q20-2 28 10M${x} ${y-36}q-8-14-24-12M${x} ${y-36}q8-14 24-12" stroke="#2c5a3a" stroke-width="3" fill="none"/>`,
+sky=n=>RC(0,0,400,300,n?'url(#nt)':'url(#sk)'),
+city=(y,f)=>{let s='';for(let i=0;i<14;i++){const h=30+((i*37)%70);s+=RC(i*30,y-h,22,h,f)}return s},
+view=(x,y,w,h,n)=>`<svg x="${x}" y="${y}" width="${w}" height="${h}" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice">${sky(n)}${city(300,'#0e1730')}</svg>`;
+const SK=['#e7c3a0','#c98f6a','#f0d2b6','#8d5a3c','#d9a982'],HR=['#2a2018','#1a1a1a','#6b4a2a','#3b2a1e','#999'];
+const SC={
+hotel:n=>sky(n)+(n?stars:'')+RC(0,252,400,48,'#1d2c26')+RC(0,262,400,38,'#8d8676')+RC(60,150,80,105,'#0f1a35')+grid(66,158,4,6,15,12,4)+RC(140,50,120,205,'#0d1830')+grid(146,56,6,10,15,15,4)+RC(140,50,120,3,'#caa860')+RC(140,125,120,2,'#caa860')+RC(140,195,120,2,'#caa860')+Pa('M260 150Q360 150 385 255H260Z','#101c38')+grid(270,166,4,5,16,12,4)+RC(118,232,164,23,'#ffd9a0')+GL(200,243,80)+RC(108,224,184,5,'#d9d1c1')+RC(10,270,110,16,'url(#wt)')+palm(30,268)+palm(135,262)+palm(330,268),
+room:()=>RC(0,0,400,300,'#cdbfa6')+view(215,35,160,150,0)+RC(293,35,3,150,'#caa860')+RC(0,215,400,85,'#7d6b55')+RC(20,95,180,65,'#5b4a3a')+RC(10,155,200,55,'#efe8da')+RC(10,185,200,30,'#b8975a')+RC(30,138,70,26,'#fff')+RC(112,138,70,26,'#fff')+RC(0,225,300,10,'#a8987e')+RC(380,140,8,70,'#caa860')+GL(384,135,40),
+suite:()=>RC(0,0,400,300,'#d6ccb8')+view(20,30,360,160,0)+RC(130,30,3,160,'#caa860')+RC(250,30,3,160,'#caa860')+RC(0,190,400,110,'#8a7961')+RC(50,150,190,70,'#efe8da')+RC(50,140,190,30,'#e2d9c6')+RC(60,125,60,26,'#fff')+E(300,235,55,12,'#3a2c20')+RC(340,150,8,80,'#caa860')+GL(344,145,45),
+pent:()=>view(0,0,400,300,0)+RC(0,205,400,3,'#cfe6ef')+RC(0,208,400,92,'#8d8676')+RC(40,222,320,40,'url(#wt)')+RC(60,272,50,8,'#efe8da')+RC(130,272,50,8,'#efe8da')+RC(0,200,400,2,'#caa860'),
+pool:()=>sky(0)+RC(70,70,260,120,'#0e1932')+grid(76,76,12,6,18,14,4)+RC(70,70,260,3,'#caa860')+RC(0,190,400,110,'#8d8676')+RC(40,205,320,55,'url(#wt)')+RC(40,205,320,3,'#caa860')+RC(60,224,120,2,'rgba(255,255,255,.35)')+RC(200,240,120,2,'rgba(255,255,255,.3)')+RC(60,272,44,8,'#efe8da')+RC(120,272,44,8,'#efe8da')+palm(20,200)+palm(380,200),
+spa:()=>RC(0,0,400,300,'#8a7358')+RC(250,30,120,130,'#e9d9b8')+GL(310,95,110)+RC(0,220,400,80,'#5b4a38')+RC(90,205,220,45,'#3f93a8')+RC(90,205,220,5,'#d9d1c1')+E(60,205,30,9,'#b9ae98')+E(60,191,22,8,'#a89e88')+E(60,179,15,7,'#988e78')+C(330,250,6,'#ffe0a8')+GL(330,248,34)+C(360,252,5,'#ffe0a8')+Pa('M180 190q-14-20 0-40t0-40','none','stroke="#fff" stroke-opacity=".3" stroke-width="3"'),
+dine:()=>RC(0,0,400,300,'#2a1f18')+view(250,30,130,110,1)+[70,170,270].map(x=>RC(x,0,1.5,60,'#caa860')+C(x,70,10,'#ffe0a8')+GL(x,70,50)).join('')+RC(0,210,400,90,'#3a2a20')+[70,200,320].map(x=>E(x,215,48,10,'#f2ebdc')+RC(x-3,215,6,50,'#f2ebdc')+C(x-14,208,4,'#caa860')+C(x+14,208,4,'#caa860')).join(''),
+brk:()=>RC(0,0,400,300,'#ece2cc')+RC(30,30,150,120,'#cfe3ee')+GL(100,80,110)+RC(0,185,400,115,'#f6f0e3')+E(120,230,50,12,'#fff')+E(260,235,50,12,'#fff')+E(320,215,26,8,'#d9a25e')+C(190,200,9,'#fff')+RC(350,150,6,40,'#6b8f5a')+C(353,146,10,'#e8a0a8'),
+bar:()=>RC(0,0,400,300,'#17120e')+[0,1].map(r=>RC(30,60+r*55,340,3,'#caa860')+Array.from({length:18},(_,i)=>RC(40+i*18,28+r*55+((i*5)%9),9,32-((i*5)%9),['#7a3b2a','#2f5d4a','#b8975a','#3b4a7a'][i%4])).join('')).join('')+RC(20,170,360,3,'#ffc77a')+GL(200,172,120)+RC(0,205,400,95,'#3a2c20')+RC(0,200,400,6,'#caa860')+[60,160,260,350].map(x=>E(x,265,16,5,'#caa860')+RC(x-2,265,4,30,'#8a7a5a')).join(''),
+lounge:()=>RC(0,0,400,300,'#2d241d')+RC(150,100,100,100,'#15100c')+GL(200,170,90)+Pa('M170 200q30-60 30-80q10 30 30 80Z','#ff9a3c')+RC(0,215,400,85,'#4a3a2c')+RC(20,170,90,55,'#d8cdb6')+RC(290,170,90,55,'#d8cdb6')+RC(300,100,6,70,'#caa860')+GL(303,95,40),
+gym:()=>RC(0,0,400,300,'#c5cad2')+view(20,25,360,110,0)+RC(0,215,400,85,'#3a3d45')+[60,150,240].map(x=>Pa(`M${x} 215l30-70h24l-8 70Z`,'#20232a')+RC(x+10,140,28,6,'#caa860')).join('')+RC(320,170,60,46,'#20232a')+[0,1,2].map(i=>C(330+i*18,162,7,'#8a8f9a')).join(''),
+lobby:()=>RC(0,0,400,300,'#d9d1c1')+RC(0,230,400,70,'#a69e8d')+Array.from({length:12},(_,i)=>RC(70+i*20,222-i*14,24,10+i*14,'#efe8da')+RC(70+i*20,222-i*14,24,3,'#caa860')).join('')+RC(300,0,1.5,70,'#caa860')+C(300,80,22,'#fff1cf')+GL(300,80,80)+RC(30,0,10,230,'#e9e1d1'),
+garden:()=>sky(0)+RC(80,70,240,110,'#0e1932')+grid(86,76,11,6,19,14,3)+RC(0,180,400,120,'#27402f')+[0,1,2].map(i=>RC(20+i*10,200+i*28,360-i*20,18,'#35573d')).join('')+C(40,170,28,'#2c5a3a')+C(365,170,32,'#2c5a3a')+RC(185,180,30,120,'#c9bfa8'),
+entrance:()=>sky(1)+stars+RC(30,150,340,110,'#0f1a35')+RC(60,200,280,60,'#ffd9a0')+GL(200,230,150)+RC(20,150,360,8,'#d9d1c1')+[50,110,290,350].map(x=>RC(x,158,8,100,'#d9d1c1')).join('')+RC(0,260,400,40,'#6c6658')+Pa('M120 262q10-22 40-24h80q30 2 40 24Z','#0a0e1c'),
+meet:()=>RC(0,0,400,300,'#cfd3da')+view(30,30,340,110,0)+RC(0,210,400,90,'#3a3d45')+E(200,200,150,22,'#7a6a55')+[80,150,250,320].map(x=>RC(x-12,165,24,26,'#20232a')).join(''),
+person:i=>RC(0,0,400,300,'#202a4c')+GL(200,120,200)+Pa('M60 300Q70 215 200 205Q330 215 340 300Z',['#15192b','#2b2f45','#1d2a3a','#3a2a2a','#1b1b22'][i%5])+Pa('M170 205L200 262L230 205Z','#f4efe6')+C(262,252,4,'#caa860')+RC(188,170,24,40,SK[i%5])+E(200,130,42,52,SK[i%5])+Pa('M158 125Q160 70 200 72Q242 70 242 125Q225 95 200 95Q175 95 158 125Z',HR[i%5])};
+const MAP=[[/bar/i,'bar'],[/entrance/i,'entrance'],[/lobby|stair|light/i,'lobby'],[/landscape/i,'garden'],[/fitness/i,'gym'],[/penthouse|rooftop/i,'pent'],[/presidential|lounge/i,'lounge'],[/executive|suite/i,'suite'],[/dining/i,'dine'],[/deluxe|room/i,'room'],[/pool/i,'pool'],[/spa/i,'spa'],[/breakfast|experiences/i,'brk']];
+const scene=(el,t='')=>{const i=+el.dataset.i||0;let n;
+if(el.closest('.team'))n=SC.person(i);else if(el.closest('.offer'))n=SC[['pool','room','meet','dine','suite'][i]]();else if(el.closest('.final'))n=SC.hotel(1);
+else{const m=MAP.find(a=>a[0].test(t));n=SC[m?m[1]:'hotel']()}
+return '<svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true">'+n+'</svg>'};
+const ph=(el,k,t)=>{el.dataset.k=k;el.innerHTML='<i style="--g:'+P[k]+'">'+scene(el,t)+'</i>'+(t?'<figcaption>'+t+'</figcaption>':'');el.setAttribute('role','img');el.setAttribute('aria-label',(t||'Hotel at night')+' (placeholder image)')};
+$$('[data-p]').forEach(e=>ph(e,e.dataset.p,e.dataset.t));
+/* rooms */
+const R=[["Deluxe Room","Contemporary elegance with refined finishes and exceptional comfort.","2 adults","Rain shower · Marble bath · Floor-to-ceiling glass","pearl"],
+["Executive Suite","A spacious private retreat with premium amenities and sophisticated interiors.","3 guests","Separate lounge · Work desk · Lounge access","stone"],
+["Presidential Suite","An extraordinary accommodation experience featuring expansive living spaces and exclusive details.","4 guests","Dining salon · Private terrace · Butler service","warm"],
+["Penthouse Experience","A private luxury sanctuary with panoramic views and exceptional design.","4 guests","Panoramic terrace · Private plunge pool · Chauffeur","dusk"]];
+$('#rl').innerHTML=R.map((r,i)=>`<article class="room rv"><figure class="pl" data-i="${i}"></figure><div><h3>${r[0]}</h3><div class="meta"><span>${r[2]}</span><span>${r[3].split(' · ')[0]}</span></div><p>${r[1]}</p><div class="det" id="d${i}"><div><ul>${r[3].split(' · ').map(a=>'<li>'+a+'</li>').join('')}<li>Smart climate and lighting</li></ul></div></div><div class="row"><button class="btn" aria-expanded="false" aria-controls="d${i}" data-x="${i}">Explore room</button><a class="btn fill" href="#book" data-r="${i}">Reserve room</a></div></div></article>`).join('');
+$$('.room .pl').forEach(e=>ph(e,R[e.dataset.i][4],R[e.dataset.i][0]));
+$('#rt').innerHTML=R.map(r=>'<option>'+r[0]+'</option>').join('');
+$$('[data-x]').forEach(b=>b.onclick=()=>{const d=$('#d'+b.dataset.x),o=d.classList.toggle('open');b.setAttribute('aria-expanded',o);b.textContent=o?'Close':'Explore room'});
+$$('[data-r]').forEach(a=>a.onclick=()=>{$('#rt').selectedIndex=a.dataset.r});
+/* experiences */
+const X=[["The Infinity Pool","A breathtaking swimming experience surrounded by beautiful architecture.","pool"],["Spa & Wellness","A peaceful sanctuary designed for relaxation and rejuvenation.","stone"],["Fine Dining","Exceptional culinary experiences in an elegant atmosphere.","warm"],["Rooftop Lounge","A sophisticated destination for relaxation and social experiences.","dusk"],["Fitness & Wellness","A premium fitness environment with modern facilities.","navy"],["Private Lounge","An exclusive space for guests seeking privacy and comfort.","gold"]];
+$('#xp').innerHTML=X.map((x,i)=>`<figure class="pl rv" tabindex="0" data-i="${i}"><div class="cap"><h3>${x[0]}</h3><p>${x[1]}</p></div></figure>`).join('');
+$$('#xp .pl').forEach(e=>{const h=e.innerHTML,x=X[e.dataset.i];e.insertAdjacentHTML('afterbegin','<i style="--g:'+P[x[2]]+'">'+scene(e,x[0])+'</i>')});
+/* architecture */
+const A=[["Exterior","Curved glass floors stacked like a stone strata, ringed in champagne-gold.","dusk"],["Entrance & reception","A monumental porte-cochère opens into a quiet, marble-lined arrival.","stone"],["Lobby & staircase","A sculptural staircase turns beneath a skylit void.","pearl"],["Lighting & materials","Warm indirect light, travertine, brushed metal and glass.","warm"],["Landscape","Terraces, water and planting soften every level.","pool"]];
+$('#tb').innerHTML=A.map((a,i)=>`<button role="tab" aria-selected="${!i}" data-a="${i}">${a[0]}</button>`).join('');
+const setA=i=>{ph($('#ar'),A[i][2],A[i][0]);$('#ad').textContent=A[i][1];$$('#tb button').forEach((b,j)=>b.setAttribute('aria-selected',i==j))};setA(0);
+$$('#tb button').forEach(b=>b.onclick=()=>setA(+b.dataset.a));
+$('#ar').parentElement.id='arch';
+/* team */
+const T=[["General Manager","Leads the house with a calm eye for detail.","navy"],["Guest Relations Manager","Turns every request into a quiet, perfect moment.","stone"],["Executive Chef","Shapes menus around season and restraint.","warm"],["Head of Concierge","Opens doors across the city, before you ask.","gold"],["Hospitality Director","Designs the rhythm of every stay.","dusk"]];
+$('#tm').innerHTML=T.map((t,i)=>`<article><figure class="pl" data-i="${i}"></figure><h3>${t[0]}</h3><button aria-expanded="false">Biography</button><p>${t[1]} (Fictional profile.)</p></article>`).join('');
+$$('.team .pl').forEach(e=>ph(e,T[e.dataset.i][2],''));
+$$('.team button').forEach(b=>b.onclick=()=>{const o=b.parentElement.classList.toggle('on');b.setAttribute('aria-expanded',o)});
+/* offers */
+const O=[["Weekend Escape","Two slow days, a late checkout and a private table.","gold"],["Romantic Getaway","A suite, a rooftop evening and time to yourselves.","dusk"],["Executive Stay","Quiet rooms, fast arrivals and a place to work.","navy"],["Luxury Dining Experience","A tasting evening paired with an overnight stay.","warm"],["Extended Stay","Longer visits with space and services to match.","stone"]];
+$('#of').innerHTML=O.map((o,i)=>`<div class="offer rv"><figure class="pl" data-i="${i}"></figure><div><h3>${o[0]}</h3><p>${o[1]}</p></div><a class="btn" href="#book">Explore offer</a></div>`).join('');
+$$('.offer .pl').forEach(e=>ph(e,O[e.dataset.i][2],''));
+/* gallery + lightbox */
+const G=[["Exterior","dusk",340],["Guest rooms","pearl",240],["Pool","pool",300],["Dining","warm",260],["Architecture","stone",360],["Spa","gold",240],["Lounge","navy",300],["Guest experiences","night",260]];
+$('#gl').innerHTML=G.map((g,i)=>`<button data-g="${i}" aria-label="Open ${g[0]}"><figure class="pl" style="height:${g[2]}px" data-i="${i}"></figure></button>`).join('');
+$$('#gl .pl').forEach(e=>ph(e,G[e.dataset.i][1],G[e.dataset.i][0]));
+let gi=0;const lb=$('#lb'),show=i=>{gi=(i+G.length)%G.length;ph($('#lp'),G[gi][1],G[gi][0])};
+$$('#gl button').forEach(b=>b.onclick=()=>{show(+b.dataset.g);lb.showModal()});
+$('#lx').onclick=()=>lb.close();$('#ln').onclick=()=>show(gi+1);$('#lv').onclick=()=>show(gi-1);
+lb.addEventListener('keydown',e=>{if(e.key=='ArrowRight')show(gi+1);if(e.key=='ArrowLeft')show(gi-1)});
+/* nav */
+const hd=$('#hd');addEventListener('scroll',()=>hd.classList.toggle('solid',scrollY>innerHeight*.6),{passive:true});
+const mn=$('#menu'),tg=o=>{mn.classList.toggle('open',o);$('#bg').setAttribute('aria-expanded',o)};
+$('#bg').onclick=()=>tg(true);$('#mx').onclick=()=>tg(false);$$('#menu a').forEach(a=>a.onclick=()=>tg(false));
+addEventListener('keydown',e=>{if(e.key=='Escape')tg(false)});
+/* reveal + parallax */
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+$$('.rv').forEach(e=>io.observe(e));
+const red=matchMedia('(prefers-reduced-motion:reduce)').matches;
+if(!red&&matchMedia('(hover:hover)').matches)addEventListener('scroll',()=>$$('.pl i').forEach(i=>{const r=i.parentElement.getBoundingClientRect();if(r.bottom>0&&r.top<innerHeight)i.style.translate='0 '+((r.top+r.height/2-innerHeight/2)*-.05)+'px'}),{passive:true});
+/* reservation (demonstration only) */
+const ci=$('#ci'),co=$('#co'),today=new Date().toISOString().slice(0,10);ci.min=co.min=today;
+$('#rf').onsubmit=e=>{e.preventDefault();let ok=1;$('#e1').textContent=$('#e2').textContent='';
+if(!ci.value){$('#e1').textContent='Choose a check-in date.';ok=0}
+if(!co.value){$('#e2').textContent='Choose a check-out date.';ok=0}else if(ci.value&&co.value<=ci.value){$('#e2').textContent='Check-out must be after check-in.';ok=0}
+if(!ok)return;
+const n=Math.round((new Date(co.value)-new Date(ci.value))/864e5),rm=$('#rt').value,g=(+$('#ad2').value)+(+$('#ch').value);
+$('#out').innerHTML=`<div class="ok"><h3>Sample result: ${rm}</h3><p>${n} night${n>1?'s':''}, ${ci.value} to ${co.value}, ${g} guest${g>1?'s':''}. This is a demonstration only. No availability was checked and nothing has been booked or confirmed.</p>
+<form class="enq" id="eq"><label for="em">Send an enquiry instead</label><input id="em" type="email" required placeholder="Your email"><textarea id="mg" rows="3" placeholder="Anything we should know?"></textarea><button class="btn" type="submit">Open enquiry email</button></form></div>`;
+$('#eq').onsubmit=ev=>{ev.preventDefault();const b=encodeURIComponent(`Enquiry (sample site)\nRoom: ${rm}\nDates: ${ci.value} to ${co.value}\nGuests: ${g}\nFrom: ${$('#em').value}\n\n${$('#mg').value}`);location.href='mailto:hello@kingssample.example?subject='+encodeURIComponent('Sample enquiry')+'&body='+b};
+$('#out').scrollIntoView({behavior:red?'auto':'smooth',block:'center'})};
+$('#nf').onsubmit=e=>{e.preventDefault();$('#nmsg').textContent='Thank you. This is a demo, so nothing was subscribed.'};
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+/* 3D hero v2: realistic hotel, cinematic orbit, mobile-stable */
+(function(){
+const cv=$('#c'),vw=$('#vw');
+let ok=false;try{ok=!!(window.THREE&&(cv.getContext('webgl')||cv.getContext('experimental-webgl')))}catch(e){}
+if(!ok){cv.style.display='none';vw.style.display='none';return}
+const small=Math.min(innerWidth,innerHeight)<720,red=matchMedia('(prefers-reduced-motion:reduce)').matches,fine=matchMedia('(hover:hover)').matches;
+const r=new THREE.WebGLRenderer({canvas:cv,antialias:true,powerPreference:'high-performance'});
+r.setPixelRatio(Math.min(devicePixelRatio,small?1.5:2));r.shadowMap.enabled=!small;
+const s=new THREE.Scene();
+const cs=(f)=>{const c=document.createElement('canvas');c.width=c.height=256;f(c.getContext('2d'));const t=new THREE.CanvasTexture(c);t.wrapS=t.wrapT=THREE.RepeatWrapping;t.anisotropy=4;return t};
+s.background=cs(x=>{const g=x.createLinearGradient(0,0,0,256);g.addColorStop(0,'#0a1024');g.addColorStop(.6,'#2b3563');g.addColorStop(.85,'#c98f62');g.addColorStop(1,'#f0c38a');x.fillStyle=g;x.fillRect(0,0,256,256)});
+s.fog=new THREE.Fog(0x2a3260,30,85);
+const cam=new THREE.PerspectiveCamera(40,1,.1,150);
+s.add(new THREE.HemisphereLight(0x9db0e6,0x3a2c20,.75));
+const sun=new THREE.DirectionalLight(0xffc88a,1.2);sun.position.set(-16,12,20);sun.castShadow=!small;sun.shadow.mapSize.set(1024,1024);Object.assign(sun.shadow.camera,{left:-22,right:22,top:20,bottom:-14,far:70});s.add(sun);
+const fac=(lit)=>cs(x=>{x.fillStyle='#0d1830';x.fillRect(0,0,256,256);for(let i=0;i<8;i++)for(let j=0;j<8;j++){const on=Math.random()<lit;x.fillStyle=on?'#f3c985':'#243a66';x.fillRect(i*32+3,j*32+4,26,24);if(!on){x.fillStyle='rgba(180,205,255,.18)';x.fillRect(i*32+3,j*32+4,26,8)}}x.fillStyle='#c8a96a';for(let j=0;j<8;j++)x.fillRect(0,j*32,256,2)});
+const fm=(w,h,lit=.35)=>{const t=fac(lit);t.repeat.set(Math.max(1,Math.round(w/2.2)/8),Math.max(1,Math.round(h/1.6)/8));return new THREE.MeshStandardMaterial({map:t,emissiveMap:t,emissive:0xffffff,emissiveIntensity:.55,roughness:.25,metalness:.5})};
+const stone=new THREE.MeshStandardMaterial({color:0xd9d1c1,roughness:.75}),dstone=new THREE.MeshStandardMaterial({color:0x6c6658,roughness:.8}),
+gold=new THREE.MeshStandardMaterial({color:0xcaa860,metalness:1,roughness:.25,emissive:0x3a2a0a}),
+water=new THREE.MeshStandardMaterial({color:0x37a6bd,emissive:0x1a8ea8,emissiveIntensity:1.1,roughness:.05,metalness:.2}),
+warm=new THREE.MeshStandardMaterial({color:0xffe0a8,emissive:0xffbd66,emissiveIntensity:1.1,roughness:.4});
+const g=new THREE.Group();s.add(g);
+const box=(w,h,d,m,x,y,z,sh=true)=>{const b=new THREE.Mesh(new THREE.BoxGeometry(w,h,d),m);b.position.set(x,y,z);if(sh){b.castShadow=b.receiveShadow=!small}g.add(b);return b};
+const bm=(w,h,d,x,y,z)=>box(w,h,d,[fm(d,h),fm(d,h),stone,stone,fm(w,h),fm(w,h)],x,y,z);
+/* ground */
+const lawn=new THREE.Mesh(new THREE.CircleGeometry(70,48),new THREE.MeshStandardMaterial({color:0x1d2c26,roughness:1}));lawn.rotation.x=-Math.PI/2;lawn.position.y=-.02;lawn.receiveShadow=!small;g.add(lawn);
+box(40,.2,22,new THREE.MeshStandardMaterial({color:0x8d8676,roughness:.35,metalness:.15}),0,.1,6);
+box(6,.22,20,dstone,0,.12,18);
+/* towers */
+box(12,2.6,4.2,[warm,warm,stone,stone,warm,warm],0,1.5,.4);          /* glowing lobby */
+for(let i=-5;i<=5;i++)box(.07,2.7,.07,gold,i*1.1,1.5,2.55,false);
+bm(12,8,3.6,0,6.6,0);                                                /* main slab */
+bm(7,5.5,3.2,-9.5,3.4,-.6);                                          /* left wing */
+const cw=new THREE.Mesh(new THREE.CylinderGeometry(7,7,6.2,56,1,true,-.2,2.3),fm(12,6.2));cw.material.side=THREE.DoubleSide;cw.position.set(8,3.6,-4);cw.rotation.y=-.5;g.add(cw);   /* curved wing */
+box(12.4,.3,3.9,stone,0,10.75,0);                                    /* roof slab */
+for(let i=0;i<4;i++)box(12.4+i*.0,.06,3.95,gold,0,2.78+i*2.45,0,false);
+/* cantilevered terraces */
+[[5,5],[-4,7.4]].forEach(a=>{box(5,.3,2.6,stone,a[0],a[1],2.9);box(5.1,.06,2.7,gold,a[0],a[1]-.18,2.9,false);box(5,.9,.05,new THREE.MeshStandardMaterial({color:0xaed4e6,transparent:true,opacity:.35,roughness:.05}),a[0],a[1]+.6,4.2,false)});
+/* rooftop pool + pergola */
+box(8,.12,1.6,gold,-1,10.95,0,false);box(7.8,.14,1.45,water,-1,10.98,0,false);
+for(const x of[4.2,5.4])for(const z of[-1,1])box(.08,2,.08,gold,x,12,z,false);box(1.6,.08,2.4,stone,4.8,13,0);
+const rp=new THREE.PointLight(0x5fd0e0,1.1,10);rp.position.set(-1,11.6,0);s.add(rp);
+/* entrance canopy */
+box(8,.3,4,stone,0,3.4,4.3);box(8.1,.05,4.1,gold,0,3.22,4.3,false);
+for(const x of[-3.4,3.4])for(const z of[3,5.6])box(.18,3.3,.18,stone,x,1.75,z);
+const cl=new THREE.PointLight(0xffc477,1.6,14);cl.position.set(0,2.8,4.5);s.add(cl);
+/* pool and deck */
+box(11,.12,5,stone,-10,.26,9);box(9,.14,3.2,gold,-10,.3,9,false);box(8.8,.16,3,water,-10,.34,9,false);
+const pl=new THREE.PointLight(0x4fc3d6,1.5,12);pl.position.set(-10,1.2,9);s.add(pl);
+for(let i=0;i<5;i++){box(.6,.14,1.7,stone,-13+i*1.5,.4,11.6);box(.6,.5,.1,stone,-13+i*1.5,.65,12.4,false)}
+/* palms and lamps */
+const pm=new THREE.MeshStandardMaterial({color:0x6b5a45,roughness:1}),lf=new THREE.MeshStandardMaterial({color:0x2c5a3a,roughness:.9,side:THREE.DoubleSide});
+const palm=(x,z,h)=>{const t=new THREE.Mesh(new THREE.CylinderGeometry(.1,.17,h,8),pm);t.position.set(x,h/2,z);t.rotation.z=(x%1)*.12;g.add(t);for(let k=0;k<7;k++){const l=new THREE.Mesh(new THREE.ConeGeometry(.22,2,4),lf);l.position.set(x,h,z);l.rotation.set(1.3,k*.9,0);l.translateY(1);g.add(l)}};
+const pp=[[-4.5,8],[-15,6],[-16,13],[-4,12.5],[4.5,9],[8,7],[11,14],[-18,10]];pp.slice(0,small?5:8).forEach(p=>palm(p[0],p[1],3+Math.abs(p[0]%2)));
+for(let i=0;i<6;i++){for(const sx of[-3.6,3.6]){const b=new THREE.Mesh(new THREE.SphereGeometry(.14,10,8),warm);b.position.set(sx,.7,9+i*3);g.add(b)}}
+const st=new Float32Array(450);for(let i=0;i<450;i+=3){const a=Math.random()*6.28,e=Math.random()*.7+.45;st[i]=Math.cos(a)*90;st[i+1]=e*70;st[i+2]=Math.sin(a)*90}
+const sg=new THREE.BufferGeometry();sg.setAttribute('position',new THREE.BufferAttribute(st,3));s.add(new THREE.Points(sg,new THREE.PointsMaterial({color:0xffffff,size:.3,fog:false})));
+/* cinematic camera */
+const V=[["Exterior",[0,7,32],[0,4.5,0]],["Entrance",[7,2.2,17],[0,2.4,3]],["Pool & terrace",[-21,4,22],[-8,1,7]],["Rooftop",[12,14.5,12],[-1,10.5,0]],["Suite",[7,7.6,12],[-1,6.4,2]]];
+let vi=0,drag=0,tdrag=0,mx=0,my=0,down=false,lx=0,idle=performance.now()-5000,t0=performance.now(),ac=0;
+const pos=new THREE.Vector3(...V[0][1]),tgt=new THREE.Vector3(...V[0][2]),tp=new THREE.Vector3(),tt=new THREE.Vector3();
+V.forEach((v,i)=>{const b=document.createElement('button');b.textContent=v[0];b.setAttribute('aria-pressed',!i);b.onclick=()=>{vi=i;tdrag=0;idle=performance.now();$$('#vw button').forEach((x,j)=>x.setAttribute('aria-pressed',i==j))};vw.appendChild(b)});
+cv.addEventListener('pointerdown',e=>{down=true;lx=e.clientX;idle=performance.now();cv.setPointerCapture(e.pointerId)});
+cv.addEventListener('pointerup',()=>{down=false;idle=performance.now()});cv.addEventListener('pointercancel',()=>down=false);
+cv.addEventListener('pointermove',e=>{if(down){tdrag+=(e.clientX-lx)*.006;lx=e.clientX;idle=performance.now()}else if(fine){mx=e.clientX/innerWidth-.5;my=e.clientY/innerHeight-.5}});
+cv.tabIndex=0;cv.addEventListener('keydown',e=>{if(e.key=='ArrowLeft')tdrag-=.2;if(e.key=='ArrowRight')tdrag+=.2;idle=performance.now()});
+/* stable sizing: ignore mobile address-bar height changes */
+let W=0,H=0;const size=()=>{const w=cv.clientWidth,h=cv.clientHeight;if(w==W&&Math.abs(h-H)<140)return;W=w;H=h;r.setSize(w,h,false);cam.aspect=w/h;if(w>900)cam.setViewOffset(w,h,-w*.14,h*.06,w,h);else cam.setViewOffset(w,h,0,h*.14,w,h);cam.updateProjectionMatrix()};
+new ResizeObserver(size).observe(cv);size();
+let vis=true;new IntersectionObserver(e=>vis=e[0].isIntersecting).observe(cv);
+const fr=small?1000/30:0;let last=0;
+function loop(t){requestAnimationFrame(loop);if(!vis||t-last<fr)return;last=t;
+const dt=Math.min((t-t0)/1000,.05);t0=t;
+if(!red&&!down&&t-idle>3500)tdrag+=dt*.07;   /* slow film-style orbit */
+drag+=(tdrag-drag)*Math.min(1,dt*4);
+ac+=dt;const k=.04*Math.min(1,dt*60);
+tp.set(...V[vi][1]);tt.set(...V[vi][2]);
+const wide=cam.aspect<1?1.55:1;
+tp.sub(tt).multiplyScalar(wide).add(tt);
+pos.lerp(tp,k);tgt.lerp(tt,k);
+const off=pos.clone().sub(tgt),a=drag,c=Math.cos(a),n=Math.sin(a),bob=red?0:Math.sin(ac*.3)*.6;
+cam.position.set(tgt.x+off.x*c+off.z*n+mx*1.2,tgt.y+off.y+bob-my*.6,tgt.z-off.x*n+off.z*c);
+cam.lookAt(tgt);rp.intensity=1.1+Math.sin(ac*1.5)*.12;r.render(s,cam)}
+requestAnimationFrame(loop);
+})();
+
+</script>
+</body>
+</html>
